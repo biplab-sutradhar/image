@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Output images
+output/
+
+# Sample images (add your own)
+sample_images/
+
+# OS
+.DS_Store
+Thumbs.db
