@@ -1,26 +1,29 @@
-# Handwritten Notes Digitization — Image Processing Pipeline
 
-> Coursework project for Image Processing
+
+# Digitization — Image Processing Pipeline
+ 
 
 ## Problem Statement
 
-Handwritten notes captured using smartphones often suffer from poor image quality due to camera noise, uneven lighting, and low contrast — making them difficult to read, share, or archive digitally. This project implements an image processing pipeline that denoises the captured image, enhances contrast, detects text stroke boundaries, repairs broken strokes, and segments text from the background — producing a clean, readable digital document.
+Handwritten notes captured on smartphones often experience quality degradation due to noise, inconsistent lighting, and low contrast. These issues make the content difficult to read, share, or store digitally. This project presents an image processing pipeline designed to enhance such images by reducing noise, improving contrast, detecting text boundaries, restoring broken strokes, and separating text from the background — resulting in a clear and readable digital document.
 
 ## Pipeline Stages
 
-| Stage | Technique | Purpose |
-|-------|-----------|---------|
-| 1 | Gaussian & Median Filtering | Remove camera grain and noise |
-| 2 | Histogram Equalization & CLAHE | Fix uneven lighting and low contrast |
-| 3 | Sobel, Laplacian, Canny | Detect pen stroke and text boundaries |
-| 4 | Morphological Operations | Repair broken strokes, remove noise dots |
-| 5 | Otsu & Adaptive Thresholding | Segment text from paper background |
+| Stage | Technique                      | Purpose                                                    |
+| ----- | ------------------------------ | ---------------------------------------------------------- |
+| 1     | Gaussian & Median Filtering    | Reduce noise and camera grain                              |
+| 2     | Histogram Equalization & CLAHE | Improve contrast and correct uneven lighting               |
+| 3     | Sobel, Laplacian, Canny        | Identify text edges and stroke boundaries                  |
+| 4     | Morphological Operations       | Restore broken strokes and eliminate small noise artifacts |
+| 5     | Otsu & Adaptive Thresholding   | Separate text from the background                          |
 
 ## Output
 
-- Stage-wise comparison plots saved to `output/`
-- Final clean document saved as `output/final_clean_document.png`
-- PSNR and SSIM metrics printed at each stage
+* Step-by-step comparison images saved in the `output/` directory
+* Final processed document stored as `output/final_clean_document.png`
+* PSNR and SSIM metrics displayed for each stage
+ 
+
 
 ## Requirements
 
@@ -47,7 +50,6 @@ image_pipeline/
 ├── metrics.py            # PSNR & SSIM computation
 ├── visualizer.py         # Plots and saves stage outputs
 ├── requirements.txt
-├── stages/
 │   ├── noise.py          # Noise addition & removal
 │   ├── enhancement.py    # Histogram EQ & CLAHE
 │   ├── edges.py          # Sobel, Laplacian, Canny
